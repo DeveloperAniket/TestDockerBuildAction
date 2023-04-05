@@ -6,7 +6,7 @@ RUN dotnet publish "./ProductApi/ProductApi.csproj" -c Release -o /app --no-rest
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
-COPY --from=build /app ./
+COPY --from=build /app .
 
 EXPOSE 5000
 ENTRYPOINT ["dotnet", "ProductApi.dll"]
