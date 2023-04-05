@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ..
+COPY . .
 RUN dotnet restore "./ProductApi/ProductApi.csproj" --disable-parallal
 RUN dotnet publish "./ProductApi/ProductApi.csproj" -c Release -o /app --no-restore
 
